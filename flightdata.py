@@ -188,6 +188,7 @@ class Dump1090DataParser(AircraftDataParser):
         for a in json_data["aircraft"]:
 
             alt = a["altitude"] if "altitude" in a else 0
+            alt = a["alt_baro"] if "alt_baro" in a else 0
             if alt == "ground":
                 alt = 0
             dist = -1
@@ -200,6 +201,8 @@ class Dump1090DataParser(AircraftDataParser):
             speed = 0
             if "speed" in a:
                 speed = geomath.knot2mph(a["speed"])
+            if "mach" in a:
+                speed = geomath.mach2mph(a["mach"])
 
             aircraftdata = AirCraftData(
                 a["hex"].upper() if "hex" in a else None,

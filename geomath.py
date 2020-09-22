@@ -41,6 +41,14 @@ def knot2mph(k):
 		return None
 	return k * 1.15078
 
+def mach2mph(ma):
+        """
+        Converts mach to miles per hour
+        """
+        if ma == None:
+                 return None
+        return ma * 767.27
+
 def mi2km(mi):
 	"""
 	Converts to miles to kilometers.

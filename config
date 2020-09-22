@@ -56,7 +56,7 @@ tweet_template =#${flight} : ${dist_mi} mi away @ ${alt_ft} ft and ${el}° frm h
 ; $fa_tweet_template will replace $tweet_template when enough data is gathered from FA API call (see flightaware section below)
 fa_tweet_template =#${flight} : #${orig_alt} (${orig_city}) to #${dest_alt} (${dest_city}). ${dist_mi} mi away @ ${alt_ft} ft and ${el}° frm hrzn, heading ${heading} @ ${speed_mph}mi/h ${time}.
 
-default_hashtags =#AboveTustin #RaspberryPi #ADSB #dump1090
+default_hashtags =#AbovePutney #ADSB #dump1090
 
 [receiver]
 latitude = 33.754271

@@ -95,7 +95,7 @@ def Tweet(a, havescreenshot):
 	if a.time.hour < 7 or a.time.hour >= 23 or (a.time.weekday() == 7 and a.time.hour < 8):
 		hashtags.append(" #AfterHours")
 	if a.altitude < 1000:
-		hashtags.append(" #2CloseForComfort")
+		hashtags.append(" #LowFlier")
 	if a.altitude >= 1000 and a.altitude < 2500 and (templateArgs['heading'] == "S" or templateArgs['heading'] == "SW"):
 		hashtags.append(" #ProbablyLanding")
 	if a.altitude > 20000 and a.altitude < 35000:
@@ -157,7 +157,7 @@ if __name__ == "__main__":
 			continue
 		lastTime = fd.time
 
-		print("Now: {}".format(fd.time))
+#		print("Now: {}".format(fd.time))
 
 		current = dict() # current aircraft inside alarm zone
 
@@ -170,9 +170,9 @@ if __name__ == "__main__":
 			if a.distance < abovetustin_distance_alarm or a.el > abovetustin_elevation_alarm:
 				# add it to the current dictionary
 				current[a.hex] = a 
-				print("{}: {}mi, {}az, {}el, {}alt, {}dB, {}seen".format(
-					a.ident_desc(), "%.1f" % a.distance, "%.1f" % a.az, "%.1f" % a.el,
-					a.altitude, "%0.1f" % a.rssi, "%.1f" % (a.seen or 0)))
+#				print("{}: {}mi, {}az, {}el, {}alt, {}dB, {}seen".format(
+#					a.ident_desc(), "%.1f" % a.distance, "%.1f" % a.az, "%.1f" % a.el,
+#					a.altitude, "%0.1f" % a.rssi, "%.1f" % (a.seen or 0)))
 				if a.hex in alarms:
 					#if it's already in the alarms dict, check to see if we're closer
 					if a.distance < alarms[a.hex][0].distance:
@@ -189,7 +189,7 @@ if __name__ == "__main__":
 			# check to see if it's in the current set of aircraft
 			for h2, a2 in current.items():
 				if h2 == h:
-					print("{} not yet, dist, elv: {}, {}".format(h, "%.1f" % a[0].distance, "%.1f" % a[0].el))
+#					print("{} not yet, dist, elv: {}, {}".format(h, "%.1f" % a[0].distance, "%.1f" % a[0].el))
 					found = True
 					break
 			# if it wasn't in the current set of aircraft, that means it's time to tweet!

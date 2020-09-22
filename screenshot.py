@@ -24,6 +24,14 @@ parser.read('config.ini')
 abovetustin_image_width = int(parser.get('abovetustin', 'image_width'))
 abovetustin_image_height = int(parser.get('abovetustin', 'image_height'))
 
+capabilities = webdriver.DesiredCapabilities.CHROME.copy()
+capabilities['chrome.page.settings.resourceTimeout'] = "20000"
+
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--headless")
+
 #  Check for Crop settings
 if parser.has_section('crop'):
     do_crop = parser.getboolean('crop', 'do_crop')
@@ -92,7 +100,8 @@ class Dump1090Display(AircraftDisplay):
 
         Returns the browser on success, None on fail.
         '''
-        browser = webdriver.PhantomJS(desired_capabilities={'phantomjs.page.settings.resourceTimeout': '20000'})
+
+        browser = webdriver.Chrome('/usr/bin/chromedriver', desired_capabilities=capabilities, options=options)
         browser.set_window_size(abovetustin_image_width, abovetustin_image_height)
 
         print("getting web page {}".format(self.url))
