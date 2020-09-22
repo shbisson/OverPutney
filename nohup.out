@@ -5623,3 +5623,44 @@ cropping screenshot
 success saving screenshot: tweet.png
 time to tweet!!!!!
 #VIR682 : 0.4 mi away @ 2925 ft and 52.6° frm hrzn, heading W @ 221.0mi/h 13:04:07. #AbovePutney #ADSB #dump1090
+time to create screenshot of <AirCraftData 40624F/BAW579V  dist=0.4254140075479057 el=52.47837467808554>:
+number of elements found: 1
+clicking on 40624F!
+cropping screenshot
+success saving screenshot: tweet.png
+time to tweet!!!!!
+#BAW579V : 0.4 mi away @ 2925 ft and 52.5° frm hrzn, heading W @ 211.8mi/h 13:07:25. #AbovePutney #ADSB #dump1090
+time to create screenshot of <AirCraftData 405A4A/BAW3ZL   dist=0.5085433526609545 el=48.17030240810445>:
+number of elements found: 1
+clicking on 405A4A!
+cropping screenshot
+success saving screenshot: tweet.png
+time to tweet!!!!!
+#BAW3ZL : 0.5 mi away @ 3000 ft and 48.2° frm hrzn, heading W @ 211.8mi/h 13:09:12. #AbovePutney #ADSB #dump1090
+time to create screenshot of <AirCraftData 3C65D1/DLH8HR   dist=0.42317363094597804 el=52.62441799391083>:
+number of elements found: 1
+clicking on 3C65D1!
+cropping screenshot
+success saving screenshot: tweet.png
+time to tweet!!!!!
+#DLH8HR : 0.4 mi away @ 2925 ft and 52.6° frm hrzn, heading W @ 214.8mi/h 13:11:00. #AbovePutney #ADSB #dump1090
+time to create screenshot of <AirCraftData 4CA295/EIN932   dist=0.4313626033543638 el=52.56312624414997>:
+number of elements found: 1
+clicking on 4CA295!
+cropping screenshot
+success saving screenshot: tweet.png
+time to tweet!!!!!
+#EIN932 : 0.4 mi away @ 2975 ft and 52.6° frm hrzn, heading W @ 217.9mi/h 13:12:40. #AbovePutney #ADSB #dump1090
+time to create screenshot of <AirCraftData 400804/BAW347   dist=0.42772841300586834 el=51.60587955419721>:
+number of elements found: 1
+clicking on 400804!
+cropping screenshot
+success saving screenshot: tweet.png
+time to tweet!!!!!
+#BAW347 : 0.4 mi away @ 2850 ft and 51.6° frm hrzn, heading W @ 196.4mi/h 13:14:29. #AbovePutney #ADSB #dump1090
+one hour since last browser reload... reloading now
+getting web page http://localhost/dump1090-fa/
+waiting for page to load...
+reset map:
+zoom in 4 times:
+<selenium.webdriver.remote.webelement.WebElement (session="11709103dc90d2c559a8cd31fc007c72", element="b96d0b06-7c48-48a8-9435-d43f72f9e137")>

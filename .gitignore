@@ -5,6 +5,10 @@ keys/
 #ignore the file config.ini:
 config.ini
 
+#ignore nohup.out
+nohup.out
+
+
 #ignore tweet.png the image it saves on each tweet:
 tweet.png
 
