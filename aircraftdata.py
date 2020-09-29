@@ -8,7 +8,8 @@ def regis(hex):
         """
         if hex == None:
                  return None
-        return requests.get("https://api.joshdouch.me/hex-reg.php?hex={hex}")
+        regis = requests.get(f"https://api.joshdouch.me/hex-reg.php?hex={hex}")
+        return regis.text
 
 def plane(hex):
         """
@@ -16,7 +17,8 @@ def plane(hex):
         """
         if hex == None:
                  return None
-        return requests.get("https://api.joshdouch.me/hex-type.php?hex={hex}")
+        plane = requests.get(f"https://api.joshdouch.me/hex-type.php?hex={hex}")
+        return plane.text
 
 def oper(hex):
         """
@@ -24,4 +26,5 @@ def oper(hex):
         """
         if hex == None:
                  return None
-        return requests.get("https://api.joshdouch.me/hex-airline.php?hex={hex}")
+        oper = requests.get(f"https://api.joshdouch.me/hex-airline.php?hex={hex}")
+        return oper.text

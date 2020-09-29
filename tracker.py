@@ -17,6 +17,7 @@ import fa_api
 import flightdata
 import geomath
 import screenshot
+import aircraftdata
 
 # Read the configuration file for this application.
 parser = ConfigParser()
@@ -53,6 +54,9 @@ def Tweet(a, havescreenshot):
 	templateArgs['flight'] = flight
 	templateArgs['icao'] = a.hex
 	templateArgs['icao'] = templateArgs['icao'].replace(" ", "")
+	templateArgs['regis'] = aircraftdata.regis(a.hex)
+	templateArgs['plane'] = aircraftdata.plane(a.hex)
+	templateArgs['oper'] = aircraftdata.oper(a.hex)
 	templateArgs['dist_mi'] = "%.1f" % a.distance
 	templateArgs['dist_km'] = "%.1f" % geomath.mi2km(a.distance)
 	templateArgs['dist_nm'] = "%.1f" % geomath.mi2nm(a.distance)
