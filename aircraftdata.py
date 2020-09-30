@@ -1,4 +1,4 @@
-# Using the api.joshdouche.me calls to get data from ICAO hex
+# Using the api.joshdouch.me calls to get data from ICAO hex
 
 import requests
 

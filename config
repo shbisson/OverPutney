@@ -51,6 +51,8 @@ image_height = 720
 ;
 
 ; $tweet_template will be used when Flightaware API is not enabled or no sufficent data has been received.
+; added regis, plane, and oper for data from api.joshdouch.me
+
 tweet_template =#${flight} ${regis} ${plane} ${oper}: ${dist_mi} mi away @ ${alt_ft} ft and ${el}° frm hrzn, heading ${heading} @ ${speed_mph}mi/h ${time}.
 
 ; $fa_tweet_template will replace $tweet_template when enough data is gathered from FA API call (see flightaware section below)
