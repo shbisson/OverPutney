@@ -24,6 +24,9 @@ image_height = 720
 ; ------------------|---------------------------------------------------------
 ;    flight         | flight name and number if available, otherwise it will be the icao code
 ;    icao           | ICAO code
+;    regis          | Registration
+;    plane          | Aircraft type
+;    oper           | Operator
 ;    dist_mi        | Minimum Distance in miles
 ;    dist_km        | Minimum Distance in kilometers
 ;    dist_nm        | Minimum Distance in nautical miles
