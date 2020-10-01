@@ -1,7 +1,7 @@
 [abovetustin]
 driver = dump1090
-data_url = http://localhost/dump1090/data/aircraft.json
-map_url = http://localhost/dump1090/gmap.html
+data_url = http://localhost/dump1090-fa/data/aircraft.json
+map_url = http://localhost/dump1090-fa/?banner=hide
 request_timeout = 60
 
 ; An airplane is only tracked and tweeted when it enters the "alarm area" the alarm area
