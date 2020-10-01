@@ -4,20 +4,20 @@
 # and then loops forever restarting the tracker program if it ever exits.
 #
 
-cd /home/pi/AboveTustin
+cd /home/pi/OverPutney
 source py3/bin/activate
 
 
 while :
 do
 	echo
-	echo '***** Restarting AboveTustin ' `date --utc --rfc-3339=ns`
+	echo '***** Restarting OverPutney ' `date --utc --rfc-3339=ns`
 	echo
 
 	python3 tracker.py
 
 	echo
-	echo '***** AboveTustin exited ' `date --utc --rfc-3339=ns`
+	echo '***** OverPutney exited ' `date --utc --rfc-3339=ns`
 	echo
 
 	sleep 5
