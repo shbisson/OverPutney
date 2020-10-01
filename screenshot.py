@@ -3,6 +3,7 @@
 #
 # kevinabrandon@gmail.com
 #
+# edit by simon@sandm.co.uk to use Chromedriver
 
 import sys
 import time
@@ -99,6 +100,8 @@ class Dump1090Display(AircraftDisplay):
         It sets up the map to the proper zoom level.
 
         Returns the browser on success, None on fail.
+
+        Now using Chromedriver
         '''
 
         browser = webdriver.Chrome('/usr/bin/chromedriver', desired_capabilities=capabilities, options=options)
