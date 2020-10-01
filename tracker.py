@@ -96,7 +96,7 @@ def Tweet(a, havescreenshot):
 		tweet = Template(parser.get('tweet', 'tweet_template')).substitute(templateArgs)
 	#conditional hashtags:
 	hashtags = []
-	if a.time.hour < 7 or a.time.hour >= 23 or (a.time.weekday() == 7 and a.time.hour < 8):
+	if a.time.hour < 6 or a.time.hour >= 23 or (a.time.weekday() == 7 and a.time.hour < 8):
 		hashtags.append(" #AfterHours")
 	if a.altitude < 1000:
 		hashtags.append(" #LowFlier")
