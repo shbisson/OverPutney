@@ -125,7 +125,7 @@ class Dump1090Display(AircraftDisplay):
             raise
 
         print("reset map:")
-        resetbutton = browser.find_elements_by_xpath("//*[contains(text(), 'Reset Map')]")
+        resetbutton = browser.find_elements_by_xpath('//*[contains(@title,"Reset Map")]')
         resetbutton[0].click()
 
         print("zoom in 4 times:")
