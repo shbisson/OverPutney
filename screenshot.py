@@ -128,7 +128,7 @@ class Dump1090Display(AircraftDisplay):
         resetbutton = browser.find_elements_by_xpath('//*[contains(@title,"Reset Map")]')
         resetbutton[0].click()
 
-        print("zoom in 4 times:")
+        print("zoom in 3 times:")
         try:
             # First look for the Open Layers map zoom button.
             zoomin = browser.find_element_by_class_name('ol-zoom-in')
@@ -139,7 +139,6 @@ class Dump1090Display(AircraftDisplay):
             zoomin = browser.find_elements_by_xpath('//*[@title="Zoom in"]')
             if zoomin:
                 zoomin = zoomin[0]
-        zoomin.click()
         zoomin.click()
         zoomin.click()
         zoomin.click()
