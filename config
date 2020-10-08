@@ -1,7 +1,7 @@
 [abovetustin]
 driver = dump1090
-data_url = http://localhost/dump1090-fa/data/aircraft.json
-map_url = http://localhost/dump1090-fa/
+data_url = http://localhost/tar1090/data/aircraft.json
+map_url = http://localhost/tar1090/
 request_timeout = 60
 
 ; An airplane is only tracked and tweeted when it enters the "alarm area" the alarm area
@@ -10,9 +10,10 @@ request_timeout = 60
 ; elevation_alarm it will be tracked until it leaves the alarm area.  After
 ; "wait_x_updates" updates it will then make the tweet.  It waits "sleep_time" between
 ; each update.
-distance_alarm = 1
-elevation_alarm = 50
-wait_x_updates = 5
+distance_alarm = 3
+elevation_alarm = 60
+wait_x_updates = 3
+
 sleep_time = 0.5
 image_width = 1280
 image_height = 720
@@ -61,8 +62,8 @@ fa_tweet_template =#${flight} : #${orig_alt} (${orig_city}) to #${dest_alt} (${d
 default_hashtags =#AbovePutney #ADSB #dump1090
 
 [receiver]
-latitude = 33.754271
-longitude = -117.823096
+latitude = (-)xx.xxxx
+longitude = (-)xx.xxxx
 
 [twitter]
 consumer_key = XXXXXXXXXXXXXXXXXXXXXXXXX
@@ -82,5 +83,5 @@ fa_api_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 do_crop = True
 crop_x = 0
 crop_y = 0
-crop_width = 816
+crop_width = 900
 crop_height = 720
