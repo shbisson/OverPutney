@@ -25,6 +25,9 @@ image_height = 720
 ; ------------------|---------------------------------------------------------
 ;    flight         | flight name and number if available, otherwise it will be the icao code
 ;    icao           | ICAO code
+;    regis          | Registration
+;    plane          | Aircraft type
+;    oper           | Operator
 ;    dist_mi        | Minimum Distance in miles
 ;    dist_km        | Minimum Distance in kilometers
 ;    dist_nm        | Minimum Distance in nautical miles
@@ -62,7 +65,7 @@ tweet_template =#${flight} ${regis} ${plane} ${oper}: ${dist_mi} mi away @ ${alt
 ; $fa_tweet_template will replace $tweet_template when enough data is gathered from FA API call (see flightaware section below)
 fa_tweet_template =#${flight} : #${orig_alt} (${orig_city}) to #${dest_alt} (${dest_city}). ${dist_mi} mi away @ ${alt_ft} ft and ${el}° frm hrzn, heading ${heading} @ ${speed_mph}mi/h ${time}.
 
-default_hashtags =#AbovePutney #ADSB #dump1090
+default_hashtags =#OverPutney #Putney #SW15 #ADSB #dump1090
 
 [receiver]
 latitude = (-)xx.xxxx
