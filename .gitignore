@@ -16,8 +16,12 @@ tweet.png
 *.log
 
 #ignore my enviromental variables:
-py3/
 __pycache__/
+bin/
+include
+lib
+pyvenv.cfg
+share
 
 #ignore other things that happen to be there:
 .DS_Store

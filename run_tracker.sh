@@ -5,7 +5,7 @@
 #
 
 cd /home/pi/OverPutney
-source py3/bin/activate
+source bin/activate
 
 
 while :
