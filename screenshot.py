@@ -137,7 +137,7 @@ class Dump1090Display(AircraftDisplay):
         try:
             # First look for the Open Layers map zoom button.
             zoomin = browser.find_element_by_class_name('ol-zoom-in')
-            print(zoomin)
+            print("Zoom: ",zoomin)
         except seleniumexceptions.NoSuchElementException as e:
             # Doesn't seem to be Open Layers, so look for the Google
             # maps zoom button.
@@ -154,6 +154,7 @@ class Dump1090Display(AircraftDisplay):
         clickOnAirplane()
         Clicks on the airplane with the name text, and then takes a screenshot
         '''
+        print(text)
         try:
             element = self.browser.find_elements_by_xpath("//td[text()='%s']" % text.lower())
             print("number of elements found: %i" % len(element))
