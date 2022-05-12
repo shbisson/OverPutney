@@ -10,6 +10,7 @@
  * It displays altitude, ground speed and heading information of the airplane at it's closest point to the bot.
  * Gives different hashtags depending on altitude, speed and time of day.
  * Adds aircraft registration, type, and owner using [Josh Douch's ICAO hex lookup APIs](https://api.joshdouch.me/).
+ * Adds destination and origin airports where available, using new APIs from Josh.
 
 ## Dependencies
 * Uses [tar1090](https://github.com/wiedehopf/tar1090) for ADSB message decoding, airplane tracking, and webserving.
@@ -23,6 +24,8 @@
 ## Notes
 
 Add your Twitter keys and location in lat/long to `config` and rename as `config.ini` before running. The `./runbot.sh` script will launch the looping script `run_tracker.sh` (which ensures the tracker python code is running) as a background task with no interaction. Use `tail -f nohup.out` to monitor operations. `pkill -f tracker` will shut down the bot.
+
+Note: the default state of the launcher now runs without writing to nohup.out as this can get large over time. Swap the commented out lines to get an output for debugging.
 
 ## Forked from the [AboveTustin](https://github.com/kevinabrandon/AboveTustin) code written by
 * [Kevin Brandon](https://github.com/kevinabrandon)
