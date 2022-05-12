@@ -3,6 +3,10 @@
 #
 # kevinabrandon@gmail.com
 #
+# modified by
+#
+# simon@sandm.co.uk
+#
 
 import sys
 import traceback
@@ -57,6 +61,7 @@ def Tweet(a, havescreenshot):
 	templateArgs['regis'] = aircraftdata.regis(a.hex)
 	templateArgs['plane'] = aircraftdata.plane(a.hex)
 	templateArgs['oper'] = aircraftdata.oper(a.hex)
+	templateArgs['route'] = aircraftdata.route(flight)
 	templateArgs['dist_mi'] = "%.1f" % a.distance
 	templateArgs['dist_km'] = "%.1f" % geomath.mi2km(a.distance)
 	templateArgs['dist_nm'] = "%.1f" % geomath.mi2nm(a.distance)
