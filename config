@@ -2,6 +2,7 @@
 driver = dump1090
 data_url = http://localhost/tar1090/data/aircraft.json
 map_url = http://localhost/tar1090/
+map_parameters = None
 request_timeout = 60
 
 ; An airplane is only tracked and tweeted when it enters the "alarm area" the alarm area
@@ -76,9 +77,9 @@ access_token = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 access_token_secret = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 [flightaware]
-; FlightAware API allows to get more information on the flights. Basic API access is now free
-; and if you are FA feeder, your request limit is doubled. For more details check:
-; https://flightaware.com/commercial/flightxml/pricing_class.rvt
+; FlightAware API provides additional information about flights. The personal tier is free, and
+; if you are a FlightAware feeder, you receive $10 of Per-Query fees free each month. For more 
+; details: https://flightaware.com/commercial/aeroapi/#compare-plans-section
 fa_enable = False
 fa_username = XXXXXXXX
 fa_api_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
