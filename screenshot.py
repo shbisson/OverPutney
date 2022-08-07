@@ -4,6 +4,7 @@
 # kevinabrandon@gmail.com
 #
 # edit by simon@sandm.co.uk to use Chromedriver
+# edit by scott@ladewig.com to work for either Selenium 4.3.0+ or older version originally used
 
 import sys
 import time
@@ -36,6 +37,17 @@ options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--headless")
 # options = webdriver.FirefoxOptions()
 # options.add_argument("--headless")
+
+# Checking to see if we need to use Selenium 4.3.0+ commands or pre4.3.0.
+webdriverversion = (webdriver.__version__).split(".")
+webdriverversionmajor = int(webdriverversion[0])
+webdriverversionminor = int(webdriverversion[1])
+
+if (webdriverversionmajor == 4 and webdriverversionminor >= 3) or webdriverversionmajor > 4:
+    usedeprecated = False
+else:
+    usedeprecated = True
+
 
 #  Check for Crop settings
 if parser.has_section('crop'):
@@ -130,18 +142,27 @@ class Dump1090Display(AircraftDisplay):
             raise
 
         print("reset map:")
-        resetbutton = browser.find_elements_by_xpath('//*[contains(@title,"Reset Map")]')
+        if usedeprecated:
+            resetbutton = browser.find_elements_by_xpath('//*[contains(@title,"Reset Map")]')
+        else:
+            resetbutton = browser.find_elements(By.XPATH, '//*[contains(@title,"Reset Map")]')
         resetbutton[0].click()
 
         print("zoom in 3 times:")
         try:
             # First look for the Open Layers map zoom button.
-            zoomin = browser.find_element_by_class_name('ol-zoom-in')
+            if usedeprecated:
+                zoomin = browser.find_element_by_class_name('ol-zoom-in')
+            else:
+                zoomin = browser.find_element(By.CLASS_NAME, 'ol-zoom-in')
             print("Zoom: ",zoomin)
         except seleniumexceptions.NoSuchElementException as e:
             # Doesn't seem to be Open Layers, so look for the Google
             # maps zoom button.
-            zoomin = browser.find_elements_by_xpath('//*[@title="Zoom in"]')
+            if usedeprecated:
+                zoomin = browser.find_elements_by_xpath('//*[@title="Zoom in"]')
+            else:
+                zoomin = browser.find_elements(By.XPATH, '//*[@title="Zoom in"]')
             if zoomin:
                 zoomin = zoomin[0]
         zoomin.click()
@@ -156,7 +177,10 @@ class Dump1090Display(AircraftDisplay):
         '''
         print(text)
         try:
-            element = self.browser.find_elements_by_xpath("//td[text()='%s']" % text.lower())
+            if usedeprecated:
+                element = self.browser.find_elements_by_xpath("//tr[@id='%s']" % text.lower())
+            else:
+                element = self.browser.find_elements(By.XPATH, "//tr[@id='%s']" % text.lower())
             print("number of elements found: %i" % len(element))
             if len(element) > 0:
                 print("clicking on {}!".format(text))
@@ -199,7 +223,10 @@ class VRSDisplay(AircraftDisplay):
         Clicks on the airplane with the name text, and then takes a screenshot
         '''
         try:
-            aircraft = self.browser.find_element_by_xpath("//td[text()='%s']" % text)
+            if usedeprecated:
+                aircraft = self.browser.find_element_by_xpath("//tr[@id=='%s']" % text)
+            else:
+                aircraft = self.browser.find_element(By.XPATH, "//tr[@id='%s']" % text)
             aircraft.click()
             time.sleep(0.5) # if we don't wait a little bit the airplane icon isn't drawn.
             show_on_map = self.browser.find_element_by_link_text('Show on map')
