@@ -135,23 +135,25 @@ class Dump1090Display(AircraftDisplay):
             raise
 
         print("reset map:")
-        resetbutton = browser.find_elements_by_xpath('//*[contains(@title,"Reset Map")]')
+        resetbutton = browser.find_elements(By.XPATH, '//*[contains(@title,"Reset Map")]')
         resetbutton[0].click()
 
-        print("zoom in 3 times:")
-        try:
-            # First look for the Open Layers map zoom button.
-            zoomin = browser.find_element_by_class_name('ol-zoom-in')
-            print("Zoom: ",zoomin)
-        except seleniumexceptions.NoSuchElementException as e:
-            # Doesn't seem to be Open Layers, so look for the Google
-            # maps zoom button.
-            zoomin = browser.find_elements_by_xpath('//*[@title="Zoom in"]')
-            if zoomin:
-                zoomin = zoomin[0]
-        zoomin.click()
-        zoomin.click()
-        zoomin.click()
+
+#        print("zoom in 3 times:")
+#        try:
+#           # First look for the Open Layers map zoom button.
+#           zoomin = browser.find_element_by_class_name('ol-zoom-in')
+#           print("Zoom: ",zoomin)
+#       except seleniumexceptions.NoSuchElementException as e:
+#           # Doesn't seem to be Open Layers, so look for the Google
+#          # maps zoom button.
+#         zoomin = browser.find_elements_by_xpath('//*[@title="Zoom in"]')
+#        if zoomin:
+#           zoomin = zoomin[0]
+#       zoomin.click()
+#       zoomin.click()
+#       zoomin.click()
+
         self.browser = browser
 
     def clickOnAirplane(self, text):
@@ -161,7 +163,7 @@ class Dump1090Display(AircraftDisplay):
         '''
         print(text)
         try:
-            element = self.browser.find_elements_by_xpath("//td[text()='%s']" % text.lower())
+            element = self.browser.find_elements(By.XPATH, "//td[text()='%s']" % text.lower())
             print("number of elements found: %i" % len(element))
             if len(element) > 0:
                 print("clicking on {}!".format(text))
@@ -204,7 +206,7 @@ class VRSDisplay(AircraftDisplay):
         Clicks on the airplane with the name text, and then takes a screenshot
         '''
         try:
-            aircraft = self.browser.find_element_by_xpath("//td[text()='%s']" % text)
+            aircraft = self.browser.find_element(By.XPATH, "//td[text()='%s']" % text)
             aircraft.click()
             time.sleep(0.5) # if we don't wait a little bit the airplane icon isn't drawn.
             show_on_map = self.browser.find_element_by_link_text('Show on map')
