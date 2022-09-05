@@ -2,7 +2,7 @@
 driver = dump1090
 data_url = http://localhost/tar1090/data/aircraft.json
 map_url = http://localhost/tar1090/
-map_parameters = ?iconscale=3S&hidesidebar&enablelabels&extendedLabels=2&nowebgl&centerReceiver&screenshot
+map_parameters = ?iconscale=3S&hidesidebar&enablelabels&extendedLabels=2&nowebgl&centerReceiver&screenshot&zoom=12
 request_timeout = 60
 
 ; An airplane is only tracked and tweeted when it enters the "alarm area" the alarm area
