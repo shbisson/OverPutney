@@ -201,6 +201,8 @@ class Dump1090DataParser(AircraftDataParser):
             speed = 0
             if "speed" in a:
                 speed = geomath.knot2mph(a["speed"])
+            if "gs" in a:
+                speed = geomath.knot2mph(a["gs"])
             if "mach" in a:
                 speed = geomath.mach2mph(a["mach"])
 
